@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
+
 
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-key-for-local')
 
@@ -82,8 +84,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
     }
 }
 
@@ -129,8 +130,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "tokushimasauna/static"]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATICFILES_DIRS = [BASE_DIR / "tokushimasauna/static"]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media_local'
@@ -145,6 +146,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/login/'  # 未ログイン時のリダイレクト先
 LOGIN_REDIRECT_URL = '/mypage/'  # ログイン後のリダイレクト先
 LOGOUT_REDIRECT_URL = '/'
+
+CLOUDINARY_URL = os.getenv('CLOUDINARY_URL')
+
+
 
 
 
