@@ -27,7 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['tokushima-sauna.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [
+    os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
+]
 
 
 # Application definition
