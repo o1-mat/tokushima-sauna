@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}TOKUSHIMA SAUNA{% endblock %}
+
+{% block content %}
+<div class="detail-container">
+    <!-- サウナ名 -->
+    <h2 class="styled-title">{{ object.name }}</h2>
+    <h4 class="section-heading mt-5">カテゴリ：{{ object.category.name }}</h4>
+
+    <!-- 画像表示 -->
+    {% if object.img %}
+        <img src="{{ object.img.url }}" class="img-fluid rounded shadow mb-4" alt="{{ object.name }}" style="width: 100%; max-width: 600px; height: auto;">
+    {% else %}
+        <img src="{{ MEDIA_URL }}NoImage.png" class="img-fluid rounded shadow mb-4" alt="{{ object.name }}">
+    {% endif %}
+
+    <!-- 詳細情報 -->
+    <div class="card detail-card">
+        <div class="card-body">
+            <p class="lead">{{ object.catchphrase }}</p>
+            <p><strong>詳細:</strong> {{ object.detail }}</p>
+            <p><strong>住所:</strong> {{ object.address }}</p>
+            <p><strong>電話番号:</strong> {{ object.tel }}</p>
+            <p><strong>ホームページ:</strong> <a href="{{ object.homepage }}" target="_blank">{{ object.homepage }}</a></p>
+            <p><strong>定休日:</strong> {{ object.holiday }}</p>
+            <p><strong>営業時間:</strong> {{ spa.operating_hours }}</p>
+            <p><strong>料金 (大人):</strong> ¥{{ object.price|floatformat:0 }}～</p>
+        </div>
+    </div>
+
+    <!-- お気に入りボタン -->
+    <div class="d-flex justify-content-start my-3">
+        <form action="{% url 'favorite' object.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-light">お気に入り登録</button>
+        </form>
+        <form action="{% url 'delete_favorite' object.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-light">お気に入り解除</button>
+        </form>
+    </div>
+
+    <!-- レビューセクション -->
+    <h3 class="styled-subtitle">レビュー</h3>
+    {% if user.is_authenticated %}
+        <a href="{% url 'review' object.id %}" class="btn btn-light mb-3">レビューを投稿</a>
+    {% else %}
+        <p>レビューを投稿するにはログインしてください。</p>
+    {% endif %}
+
+    <!-- レビューログ -->
+    <ul class="list-group">
+        {% for review in object.review_set.all %}
+            <li class="list-group-item">
+                <strong>投稿者: {{ review.user.username }}</strong>⭐{{ review.star }}
+                <p>コメント: {{ review.content }}</p>
+                <small>投稿日: {{ review.created_at|date:"Y/m/d H:i" }}</small>
+                {% if review.user == user %}
+                    <div class="mt-2">
+                        <a href="{% url 'edit_review' review.id %}" class="btn btn-light">編集</a>
+                        <a href="{% url 'delete_review' review.id %}" class="btn btn-light">削除</a>
+                    </div>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li class="list-group-item text-muted">まだレビューはありません。</li>
+        {% endfor %}
+    </ul>
+
+    <!-- 戻るボタン -->
+    <a href="{% url 'spa_list' %}" class="btn btn-light mt-4">一覧に戻る</a>
+</div>
+{% endblock %}

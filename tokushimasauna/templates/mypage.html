@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="section-heading">{{user.username}}さんのマイページ</h2>
+<h4>- お気に入り一覧 -</h4>
+<ul class="list-group mb-4">
+    {% for favorite in user.user_favorites.all %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="{% url 'spa_detail' favorite.spa.id %}" style="font-size: 1.3rem; color:#5a4633;">
+            {{ favorite.spa.name }}
+        </a>        
+        <form action="{% url 'delete_favorite' favorite.spa.id %}" method="post" class="d-inline">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-light btn-sm">解除</button>
+        </form>
+    </li>
+    {% empty %}
+    <li class="list-group-item">お気に入りに登録されている施設はありません。</li>
+    {% endfor %}
+</ul>
+
+<div class="d-flex justify-content-between">
+    <a href="{% url 'spa_list' %}" class="btn btn-light">一覧に戻る</a>
+</div>
+{% endblock %}

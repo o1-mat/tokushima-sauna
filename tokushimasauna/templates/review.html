@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="styled-title">レビューを投稿</h2>
+<div class="card detail-card">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary me-2">投稿する</button>
+            <a href="{% url 'spa_detail' spa.id %}" class="btn btn-secondary">戻る</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

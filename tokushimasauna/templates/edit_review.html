@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4>レビューを編集する</h4>
+<div class="card detail-card">
+    <form action="{% url 'edit_review' review.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-light">更新</button>
+            <a href="{% url 'spa_detail' review.spa.id %}" class="btn btn-light">キャンセル</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
