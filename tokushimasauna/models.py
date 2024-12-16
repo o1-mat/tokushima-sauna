@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
     name = models.CharField(max_length=200, verbose_name='名称')
-    img = models.ImageField(blank=True, default='NoImage.png', verbose_name='画像')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='作成日')
 
     def __str__(self):
@@ -14,7 +13,12 @@ class Spa(models.Model):
     name = models.CharField(max_length=200, verbose_name='施設名')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='カテゴリ')
     homepage = models.URLField(blank=True, null=True, verbose_name='ホームページURL')
-    img = models.ImageField(blank=True, default='NoImage.png', verbose_name='画像')
+    img = models.ImageField( 
+        upload_to='media/',  # Cloudinary内で保存されるフォルダ名
+        blank=True,
+        default='media/NoImage.png',  # Cloudinary内に配置するデフォルト画像
+        verbose_name='画像'
+    )
     detail = models.TextField(blank=True, null=True, verbose_name='詳細')
     catchphrase = models.TextField(blank=True, null=True, verbose_name='キャッチフレーズ')
     address = models.CharField(max_length=200, verbose_name='住所')
