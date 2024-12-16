@@ -11,7 +11,7 @@
 
     <!-- 画像表示 -->
     {% if object.img %}
-        <img src="{{ object.img.url }}" class="img-fluid rounded shadow mb-4" alt="{{ object.name }}" style="width: 100%; max-width: 600px; height: auto;">
+        <img src="{{ object.image.url }}" class="img-fluid rounded shadow mb-4" alt="{{ object.name }}" style="width: 100%; max-width: 600px; height: auto;">
     {% else %}
         <img src="{{ MEDIA_URL }}NoImage.png" class="img-fluid rounded shadow mb-4" alt="{{ object.name }}">
     {% endif %}

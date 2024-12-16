@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 class Category(models.Model):
@@ -13,12 +14,7 @@ class Spa(models.Model):
     name = models.CharField(max_length=200, verbose_name='施設名')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='カテゴリ')
     homepage = models.URLField(blank=True, null=True, verbose_name='ホームページURL')
-    img = models.ImageField( 
-        upload_to='media/',  # Cloudinary内で保存されるフォルダ名
-        blank=True,
-        default='media/NoImage.png',  # Cloudinary内に配置するデフォルト画像
-        verbose_name='画像'
-    )
+    image = CloudinaryField('image')
     detail = models.TextField(blank=True, null=True, verbose_name='詳細')
     catchphrase = models.TextField(blank=True, null=True, verbose_name='キャッチフレーズ')
     address = models.CharField(max_length=200, verbose_name='住所')
