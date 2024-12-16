@@ -15,7 +15,7 @@ class Spa(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='カテゴリ')
     homepage = models.URLField(blank=True, null=True, verbose_name='ホームページURL')
     img = CloudinaryField(
-    default='https://res.cloudinary.com/dd13xessz/image/upload/v1734362457/noImage_gos7nw.png',
+    default='https://res.cloudinary.com/dd13xessz/image/upload/v1734368724/noImage_ppsep5.png',
     blank=True,
     verbose_name='画像'
     )
