@@ -12,11 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 
-
-SECRET_KEY = os.getenv('SECRET_KEY', 'default-key-for-local')
-
+SECRET_KEY = os.environ['SECRET_KEY']
+ALLOWED_HOSTS = [ os.environ["ALLOWED_HOSTS"] ]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,8 +26,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
-
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
 
 # Application definition
 
@@ -44,6 +40,8 @@ INSTALLED_APPS = [
     'tokushimasauna',
     'whitenoise.runserver_nostatic',
     'django_extensions',
+    'cloudinary',
+    'cloudinary_storage'
 ]
 
 MIDDLEWARE = [
@@ -81,9 +79,28 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost')
-}
+# DBの設定
+DATABASES = { 
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME'    : os.environ["DB_NAME"],
+            'USER'    : os.environ["DB_USER"],
+            'PASSWORD': os.environ["DB_PASSWORD"],
+            'HOST'    : os.environ["DB_HOST"],
+            'PORT': '5432',
+            }
+        }
+
+import dj_database_url
+
+db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'].update(db_from_env)
+
+
+
+# DATABASES = {
+#     'default': dj_database_url.config(default='postgres://localhost')
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -144,7 +161,23 @@ LOGIN_URL = '/login/'  # 未ログイン時のリダイレクト先
 LOGIN_REDIRECT_URL = '/mypage/'  # ログイン後のリダイレクト先
 LOGOUT_REDIRECT_URL = '/'
 
-CLOUDINARY_URL = os.getenv('CLOUDINARY_URL')
+
+#cloudinaryの設定
+CLOUDINARY_STORAGE = { 
+        'CLOUD_NAME': os.environ["CLOUD_NAME"], 
+        'API_KEY'   : os.environ["API_KEY"], 
+        'API_SECRET': os.environ["API_SECRET"],
+        "SECURE"    : True,
+        }
+
+#これで全てのファイルがアップロード可能(上限20MB。ビュー側でアップロードファイル制限するなら基本これでいい)
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
+
+
+
+
+
+
 
 
 
