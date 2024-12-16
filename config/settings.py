@@ -18,7 +18,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'multiselectfield',
     'tokushimasauna',
-    'whitenoise.runserver_nostatic',
     'django_extensions',
     'cloudinary',
     'cloudinary_storage',
@@ -26,7 +25,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,7 +53,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# 国際化設定
+
 LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 USE_I18N = True
@@ -79,8 +77,7 @@ DATABASES['default'].update(db_from_env)
 
 # 静的ファイルの設定
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Cloudinaryストレージの設定
 CLOUDINARY_STORAGE = {
