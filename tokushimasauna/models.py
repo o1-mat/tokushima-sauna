@@ -17,7 +17,7 @@ class Spa(models.Model):
     img = models.ImageField( 
         upload_to='media/',  # Cloudinary内で保存されるフォルダ名
         blank=True,
-        default='media/NoImage.png',  # Cloudinary内に配置するデフォルト画像
+        default='https://res.cloudinary.com/dd13xessz/image/upload/v1734362457/noImage_gos7nw.png',  # Cloudinary内に配置するデフォルト画像
         verbose_name='画像'
     )
     detail = models.TextField(blank=True, null=True, verbose_name='詳細')
