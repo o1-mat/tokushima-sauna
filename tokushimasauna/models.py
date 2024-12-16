@@ -14,11 +14,10 @@ class Spa(models.Model):
     name = models.CharField(max_length=200, verbose_name='施設名')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='カテゴリ')
     homepage = models.URLField(blank=True, null=True, verbose_name='ホームページURL')
-    img = models.ImageField( 
-        upload_to='media/',  # Cloudinary内で保存されるフォルダ名
-        blank=True,
-        default='https://res.cloudinary.com/dd13xessz/image/upload/v1734362457/noImage_gos7nw.png',  # Cloudinary内に配置するデフォルト画像
-        verbose_name='画像'
+    img = CloudinaryField(
+    default='https://res.cloudinary.com/dd13xessz/image/upload/v1734362457/noImage_gos7nw.png',
+    blank=True,
+    verbose_name='画像'
     )
     detail = models.TextField(blank=True, null=True, verbose_name='詳細')
     catchphrase = models.TextField(blank=True, null=True, verbose_name='キャッチフレーズ')
