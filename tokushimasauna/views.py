@@ -107,7 +107,7 @@ def delete_favorite_view(request, pk):
         messages.success(request, "お気に入りを解除しました。")  # 成功メッセージ
     else:
         messages.warning(request, "お気に入り登録されていません。")  # 警告メッセージ
-    return render(request, 'mypage.html', {'user': request.user}) # 詳細ページにリダイレクト
+    return redirect('spa_detail', pk=spa.id)  # 詳細ページにリダイレクト
 
 
 @login_required
