@@ -5,10 +5,8 @@
 徳島県の豊かな自然や文化と調和した温泉・サウナ施設の特長を紹介し、観光客や地元住民がそれぞれのニーズに合った施設を見つけられる場を提供します。
 
 ## リンク 
-**GitHub リポジトリ**　[Tokushima Sauna - GitHub]
-(https://github.com/o1-mat/tokushima-sauna)
-**デプロイされたアプリケーション**　[Tokushima Sauna アプリケーション]
-(https://tokushima-sauna-d97c26d92e22.herokuapp.com/)
+**GitHub リポジトリ**　[Tokushima Sauna - GitHub]　　https://github.com/o1-mat/tokushima-sauna
+**デプロイされたアプリケーション**　[Tokushima Sauna アプリケーション]　　https://tokushima-sauna-d97c26d92e22.herokuapp.com/
 
 ### 主な機能
 **ユーザー認証** : 登録、ログイン、アカウント管理が可能。
