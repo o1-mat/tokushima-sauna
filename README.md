@@ -12,10 +12,11 @@
 
 ## 画面遷移図
 ### ユーザー側
-![image](https://github.com/user-attachments/assets/1f6f7ffb-e05c-4e96-bcc3-4dd16234fb8a)
+![画面遷移図_ユーザー側](https://github.com/user-attachments/assets/69118fd6-ea04-4d84-a06f-e9306ac95c7a)
 
 ### 管理者側
-![image](https://github.com/user-attachments/assets/979a7344-441a-4b6e-a1e7-95b3548ff7d9)
+![画面遷移図_管理者側](https://github.com/user-attachments/assets/75866479-3c44-4553-a687-7758f5b28a48)
+
 
 ### 主な機能
 - **ユーザー認証** : 登録、ログイン、アカウント管理が可能。
