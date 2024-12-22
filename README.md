@@ -4,32 +4,35 @@
 「Tokushima Sauna」は、私の生まれ育った徳島県にある温泉・サウナ施設の魅力を広く伝えることを目的とした情報共有型のプラットフォームです。
 徳島県の豊かな自然と調和した温泉・サウナ施設の特長を紹介し、観光客や地元住民がそれぞれのニーズに合った施設を見つけられる場を提供します。
 
+
 ## リンク 
 - **GitHub リポジトリ**
 [Tokushima Sauna - GitHub]　　https://github.com/o1-mat/tokushima-sauna
 - **デプロイされたアプリケーション**
 [Tokushima Sauna アプリケーション]　　https://tokushima-sauna-d97c26d92e22.herokuapp.com/
 
+
 ## 画面遷移図
 ### ユーザー側
 ![画面遷移図_ユーザー側](https://github.com/user-attachments/assets/69118fd6-ea04-4d84-a06f-e9306ac95c7a)
-
 ### 管理者側
 ![画面遷移図_管理者側](https://github.com/user-attachments/assets/75866479-3c44-4553-a687-7758f5b28a48)
 
 
 ## アプリケーション画面のプレビュー
 ### 検索フィルタ
-
+![プレビュー検索フィルタ](https://github.com/user-attachments/assets/adf748c1-1fc0-414f-a3ea-fd8817bda3d2)
 ### 施設情報
-
+![プレビュー施設情報](https://github.com/user-attachments/assets/365dc679-d390-4254-a0dd-9a3dab015d25)
 ### お気に入り登録
-
+![プレビューお気に入り登録](https://github.com/user-attachments/assets/8df521d7-847e-4879-94d1-2c7b68cc4514)
 ### レビュー投稿
-
+![プレビューレビュー投稿](https://github.com/user-attachments/assets/df6a9c21-e533-4631-a100-b4b80554e747)
 ### ユーザー認証
-
+![プレビューユーザー認証](https://github.com/user-attachments/assets/45c0bca7-5276-4934-9b0e-393cf34bc67d)
 ### 管理者ダッシュボード
+![プレビュー管理者ダッシュボード](https://github.com/user-attachments/assets/9beaf762-6393-4f29-8ba2-10fae7b55f17)
+
 
 ## 主な機能
 - **検索フィルタ** : 希望条件に合った温泉・サウナ施設を簡単に見つけられる。
@@ -38,6 +41,7 @@
 - **レビュー投稿** : 会員登録済みのユーザーが施設のレビューを投稿可能。
 - **ユーザー認証** : 登録、ログイン、アカウント管理が可能。
 - **管理者ダッシュボード** : 施設情報の更新やユーザーフィードバックの管理が可能。
+
 
 ## 使用技術
 ### フロントエンド
@@ -48,10 +52,10 @@
 - **Python (Django フレームワーク)** : ビジネスロジック、データ処理、ユーザー認証を担当。
 ### データベース
 - **PostgreSQL** : データを安全かつ効率的に保存。
-
 ### デプロイ
 - **Heroku** : クラウドベースのホスティングサービス。
 - **Cloudinary** : メディア管理と画像最適化のためのサービス。
+
 
 ## 設計
 Django が提供する Model-View-Template (MVT) デザインパターンを採用。
@@ -59,6 +63,7 @@ Django が提供する Model-View-Template (MVT) デザインパターンを採�
 - **ビュー (View)** : ユーザーからのリクエストを処理し、適切なレスポンスを生成。
 e.g. 施設の一覧ページや詳細情報ページへのデータ取得
 - **テンプレート (Template)** : 動的なHTMLコンテンツを生成し、ユーザーに表示されるページのレイアウトやデザインを管理
+
 
 ## 今後の改善点
 - **マップ機能** : 現在地や指定エリア周辺のサウナ施設を地図上に表示する機能を追加。
