@@ -10,6 +10,9 @@
 - **デプロイされたアプリケーション**
 [Tokushima Sauna アプリケーション]　　https://tokushima-sauna-d97c26d92e22.herokuapp.com/
 
+![image](https://github.com/user-attachments/assets/3cd3e3d0-4baa-494f-905d-7875d2096d8a)
+
+
 ### 主な機能
 - **ユーザー認証** : 登録、ログイン、アカウント管理が可能。
 - **施設情報** : 温泉・サウナ施設の詳細情報を閲覧可能。
