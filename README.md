@@ -6,9 +6,9 @@
 
 
 ## リンク 
-- **GitHub リポジトリ**
+### GitHub リポジトリ
 [Tokushima Sauna - GitHub]　　https://github.com/o1-mat/tokushima-sauna
-- **デプロイされたアプリケーション**
+### **デプロイされたアプリケーション
 [Tokushima Sauna アプリケーション]　　https://tokushima-sauna-d97c26d92e22.herokuapp.com/
 
 
