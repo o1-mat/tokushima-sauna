@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from tokushimasauna.views import SpaListView, SpaDetailView, mypage_view, login_view, logout_view, register_view, favorite_view, delete_favorite_view, review_view, edit_review_view, delete_review_view
+from tokushimasauna.views import SpaListView, SpaDetailView, mypage_view, login_view, logout_view, register_view, favorite_view, delete_favorite_view, review_view, edit_review_view, delete_review_view, edit_user_view, change_password_view
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -17,6 +17,8 @@ urlpatterns = [
     path('review/<int:pk>', review_view, name="review"),
     path('review/edit/<int:pk>/', edit_review_view, name='edit_review'),
     path('review/delete/<int:pk>/', delete_review_view, name='delete_review'),
+    path('edit_user/', edit_user_view, name='edit_user'),
+    path('change_password/', change_password_view, name='change_password'),
 ]
 
 if settings.DEBUG:
