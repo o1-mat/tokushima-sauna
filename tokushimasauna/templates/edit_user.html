@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h4>プロフィールを編集する</h4>
+<div class="card detail-card">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-light">更新</button>
+            <a href="{% url 'mypage' %}" class="btn btn-light">キャンセル</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
