@@ -21,20 +21,10 @@
 
 ## アプリケーション画面のプレビュー
 ![プレビュー検索フィルタ](https://github.com/user-attachments/assets/adf748c1-1fc0-414f-a3ea-fd8817bda3d2)
-
-
-
-
-
-
 ![プレビュー施設情報](https://github.com/user-attachments/assets/365dc679-d390-4254-a0dd-9a3dab015d25)
-
 ![プレビューお気に入り登録](https://github.com/user-attachments/assets/8df521d7-847e-4879-94d1-2c7b68cc4514)
-
 ![プレビューレビュー投稿](https://github.com/user-attachments/assets/df6a9c21-e533-4631-a100-b4b80554e747)
-
 ![プレビューユーザー認証](https://github.com/user-attachments/assets/45c0bca7-5276-4934-9b0e-393cf34bc67d)
-
 ![プレビュー管理者ダッシュボード](https://github.com/user-attachments/assets/9beaf762-6393-4f29-8ba2-10fae7b55f17)
 
 
