@@ -45,15 +45,9 @@ class RegistrationForm(UserCreationForm):
                 'placeholder': '例: example@example.com'
             }),
             # パスワード1: 
-            'password1': forms.PasswordInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'パスワードを入力してください。(8文字以上)'
-            }),
+            'password1': forms.PasswordInput(attrs={'class': 'form-control'}),
             # パスワード2: パスワード1と一致するか確認
-            'password2': forms.PasswordInput(attrs={
-                'class': 'form-control',
-                'placeholder': '確認用のパスワードをもう一度入力してください。'
-            }),
+            'password2': forms.PasswordInput(attrs={'class': 'form-control'})
         }
     
     def __init__(self, *args, **kwargs):
