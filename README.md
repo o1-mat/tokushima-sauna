@@ -14,9 +14,9 @@
 
 ## 画面遷移図
 ### ユーザー側
-![画面遷移図_ユーザー側](https://github.com/user-attachments/assets/69118fd6-ea04-4d84-a06f-e9306ac95c7a)
+![画面遷移図(ユーザー側) ](https://github.com/user-attachments/assets/726ac07b-02fc-4424-8c0f-e07f268bdd66)
 ### 管理者側
-![画面遷移図_管理者側](https://github.com/user-attachments/assets/75866479-3c44-4553-a687-7758f5b28a48)
+![画面遷移図(管理者側) ](https://github.com/user-attachments/assets/b88fd31a-cf81-4d7e-b4ed-e888cc3d22a5)
 
 
 ## アプリケーション画面のプレビュー
