@@ -52,7 +52,7 @@
 
 
 ## 設計
-- Django が提供する Model-View-Template (MVT) デザインパターンを採用。
+Django が提供する Model-View-Template (MVT) デザインパターンを採用。
 ### モデル (Model)
 アプリケーションで扱うデータ構造を定義します。施設情報やお気に入り・レビュー情報をデータベースで管理。
 ### ビュー (View)
