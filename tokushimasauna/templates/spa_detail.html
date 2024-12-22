@@ -68,8 +68,10 @@
             <li class="list-group-item text-muted">まだレビューはありません。</li>
         {% endfor %}
     </ul>
+</div>
 
-    <!-- 戻るボタン -->
-    <a href="{% url 'spa_list' %}" class="btn btn-light mt-4">一覧に戻る</a>
+<div class="d-flex justify-content-center">
+    <a href="{% url 'spa_list' %}" class="btn btn-light">一覧に戻る</a>
 </div>
 {% endblock %}
+
