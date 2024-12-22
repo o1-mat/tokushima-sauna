@@ -6,10 +6,8 @@
 
 
 ## リンク 
-### GitHub リポジトリ
-https://github.com/o1-mat/tokushima-sauna
-### デプロイされたアプリケーション
-https://tokushima-sauna-d97c26d92e22.herokuapp.com/
+- **GitHub リポジトリ** : https://github.com/o1-mat/tokushima-sauna
+- **デプロイされたアプリケーション** : https://tokushima-sauna-d97c26d92e22.herokuapp.com/
 
 
 ## 画面遷移図
