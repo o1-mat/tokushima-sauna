@@ -14,7 +14,7 @@
 
 ## 画面遷移図
 ### ユーザー側
-https://github.com/o1-mat/tokushima-sauna/blob/main/Portfolio_Images/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3(%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E5%81%B4)%20.png
+![画面遷移図(ユーザー側) ](https://github.com/user-attachments/assets/0f9eea3b-742b-405c-80f6-a3c856db3bff)
 ### 管理者側
 ![画面遷移図(管理者側) ](https://github.com/user-attachments/assets/b88fd31a-cf81-4d7e-b4ed-e888cc3d22a5)
 
