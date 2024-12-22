@@ -10,7 +10,11 @@
 - **デプロイされたアプリケーション**
 [Tokushima Sauna アプリケーション]　　https://tokushima-sauna-d97c26d92e22.herokuapp.com/
 
-![image](https://github.com/user-attachments/assets/3cd3e3d0-4baa-494f-905d-7875d2096d8a)
+## 画面遷移図
+### ユーザー側
+https://res.cloudinary.com/dd13xessz/image/upload/v1734865050/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3_%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E5%81%B4_bb5ara.png
+### 管理者側
+https://res.cloudinary.com/dd13xessz/image/upload/v1734865050/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3_%E7%AE%A1%E7%90%86%E8%80%85%E5%81%B4_yaxqhb.png
 
 
 ### 主な機能
