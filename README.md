@@ -12,10 +12,11 @@
 
 ## 画面遷移図
 ### ユーザー側
-https://res.cloudinary.com/dd13xessz/image/upload/v1734865050/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3_%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E5%81%B4_bb5ara.png
+![image](https://github.com/user-attachments/assets/1f6f7ffb-e05c-4e96-bcc3-4dd16234fb8a)
+
 ### 管理者側
 https://res.cloudinary.com/dd13xessz/image/upload/v1734865050/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3_%E7%AE%A1%E7%90%86%E8%80%85%E5%81%B4_yaxqhb.png
-
+![image](https://github.com/user-attachments/assets/979a7344-441a-4b6e-a1e7-95b3548ff7d9)
 
 ### 主な機能
 - **ユーザー認証** : 登録、ログイン、アカウント管理が可能。
