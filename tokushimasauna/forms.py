@@ -22,11 +22,11 @@ class SearchForm(forms.Form):
 class LoginForm(AuthenticationForm):
     username = forms.CharField(
         label="ユーザー名",
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'ユーザー名を入力してください'})
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'ユーザー名を入力してください。'})
     )
     password = forms.CharField(
         label="パスワード",
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'パスワードを入力してください'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'パスワードを入力してください。(8文字以上)'})
     )
 
 class RegistrationForm(UserCreationForm):
@@ -85,20 +85,20 @@ class UserEditForm(forms.ModelForm):
         model = User
         fields = ['username', 'email']
         widgets = {
-            'username': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'ユーザー名'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'メールアドレス'}),
+            'username': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'ユーザー名を入力してください。'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': '例: example@example.com'}),
         }
 
 class CustomPasswordChangeForm(PasswordChangeForm):
     old_password = forms.CharField(
         label="現在のパスワード",
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '現在のパスワード'}),
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '現在のパスワードを入力してください。'}),
     )
     new_password1 = forms.CharField(
         label="新しいパスワード",
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '新しいパスワード'}),
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '新しいパスワードを入力してください。(8文字以上)'}),
     )
     new_password2 = forms.CharField(
         label="新しいパスワード (確認用)",
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '新しいパスワードをもう一度'}),
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '確認用のパスワードをもう一度入力してください。'}),
     )
