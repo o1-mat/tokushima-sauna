@@ -70,12 +70,7 @@ class ReviewForm(forms.ModelForm):
             'star': '評価 (星1〜5)',
             'content': 'レビュー内容',
         }
-    
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field_name, field in self.fields.items():
-            field.help_text = None  # ヘルプテキストを削除
-            field.error_messages = {}  # エラーメッセージを削除
+
 
 
 class UserEditForm(forms.ModelForm):
@@ -86,6 +81,12 @@ class UserEditForm(forms.ModelForm):
             'username': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'ユーザー名を入力してください。'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': '例: example@example.com'}),
         }
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.help_text = None  # ヘルプテキストを削除
+            field.error_messages = {}  # エラーメッセージを削除
 
 
 
