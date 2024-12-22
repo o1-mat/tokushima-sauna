@@ -2,12 +2,10 @@ from django.views.generic import ListView, DetailView
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout, update_session_auth_hash
 from .models import Spa, Category, Favorite, Review
-from .forms import SearchForm, LoginForm, RegistrationForm, ReviewForm
+from .forms import SearchForm, LoginForm, RegistrationForm, ReviewForm, UserEditForm, CustomPasswordChangeForm
 from django.contrib.auth.decorators import login_required
-
-
 
 
 class SpaListView(ListView):
@@ -143,3 +141,31 @@ def delete_review_view(request, pk):
     spa_id = review.spa.id
     review.delete()
     return redirect('spa_detail', pk=spa_id)
+
+
+@login_required
+def edit_user_view(request):
+    if request.method == 'POST':
+        form = UserEditForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "プロフィールを更新しました。")
+            return redirect('mypage')
+    else:
+        form = UserEditForm(instance=request.user)
+    return render(request, 'edit_user.html', {'form': form})
+
+@login_required
+def change_password_view(request):
+    if request.method == 'POST':
+        form = CustomPasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # パスワード変更後にセッションを維持
+            messages.success(request, "パスワードを変更しました。")
+            return redirect('mypage')
+        else:
+            messages.error(request, "入力内容にエラーがあります。")
+    else:
+        form = CustomPasswordChangeForm(request.user)
+    return render(request, 'change_password.html', {'form': form})

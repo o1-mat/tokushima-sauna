@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, PasswordChangeForm
 from django.contrib.auth.models import User
 from .models import Category, Review
 
@@ -49,7 +49,7 @@ class RegistrationForm(UserCreationForm):
                 'class': 'form-control',
                 'placeholder': 'パスワードを入力してください。(8文字以上)'
             }),
-            # パスワード2: パスワード1と一致するかチェックされます。
+            # パスワード2: パスワード1と一致するか確認
             'password2': forms.PasswordInput(attrs={
                 'class': 'form-control',
                 'placeholder': '確認用のパスワードをもう一度入力してください。'
@@ -79,3 +79,26 @@ class ReviewForm(forms.ModelForm):
         }
 
 
+
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email']
+        widgets = {
+            'username': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'ユーザー名'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'メールアドレス'}),
+        }
+
+class CustomPasswordChangeForm(PasswordChangeForm):
+    old_password = forms.CharField(
+        label="現在のパスワード",
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '現在のパスワード'}),
+    )
+    new_password1 = forms.CharField(
+        label="新しいパスワード",
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '新しいパスワード'}),
+    )
+    new_password2 = forms.CharField(
+        label="新しいパスワード (確認用)",
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '新しいパスワードをもう一度'}),
+    )
