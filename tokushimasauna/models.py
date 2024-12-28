@@ -6,7 +6,6 @@ from cloudinary.models import CloudinaryField
 class Category(models.Model):
     name = models.CharField(max_length=200, verbose_name='名称')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='登録日')
-    updated_at = models.DateTimeField(auto_now=True, verbose_name="更新日")
 
     def __str__(self):
         return self.name
@@ -28,7 +27,6 @@ class Spa(models.Model):
     holiday = models.CharField(max_length=50, blank=True, null=True, verbose_name='定休日')
     operating_hours = models.CharField(null=True, blank=True, max_length=100, verbose_name='営業時間')
     created_at = models.DateTimeField(auto_now_add=True, max_length=50, verbose_name='登録日')
-    updated_at = models.DateTimeField(auto_now=True, verbose_name="更新日")
     favorited_by = models.ManyToManyField(User, related_name='favorites', blank=True, verbose_name='お気に入り')
     
     def __str__(self):
