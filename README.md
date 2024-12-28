@@ -71,7 +71,7 @@ Django が提供する Model-View-Template (MVT) デザインパターンを採�
 
 
 ## ER図（DBテーブル設計）
-![ER図](https://github.com/user-attachments/assets/c48b524b-d6da-40da-8818-00bfea26317e)
+![ER図](https://github.com/user-attachments/assets/0b4cfa65-494b-4c1c-8c7d-e0b3d39a8806)
 
 
 ## 今後の改善点
